@@ -36,8 +36,8 @@ public class Camera : MonoBehaviour
 
         Vector3 Direction = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        transform.position = lookAt.position + rotation * Direction;
+        //transform.position = lookAt.position + rotation * Direction;
 
-        transform.LookAt(lookAt.position);
+        transform.LookAt(lookAt.position + rotation * Direction);
     }
 }

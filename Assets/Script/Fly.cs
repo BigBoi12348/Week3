@@ -12,19 +12,19 @@ public class Fly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * 8.0f;
+        transform.position += transform.forward * Time.deltaTime * 15.0f;
         if (Input.GetButton("Fire1"))
             transform.position += transform.forward * Time.deltaTime * 20.0f;
 
         transform.Rotate(Input.GetAxis("Vertical"), 0.0f, -Input.GetAxis("Horizontal"));
 
-        float terrainHeightWhereWeAre = Terrain.activeTerrain.SampleHeight(transform.position);
+        //float terrainHeightWhereWeAre = Terrain.activeTerrain.SampleHeight(transform.position);
 
-        if (terrainHeightWhereWeAre > transform.position.y)
-        {
-            transform.position = new Vector3(transform.position.x,
-            terrainHeightWhereWeAre,
-            transform.position.z);
-        }
+        //if (terrainHeightWhereWeAre > transform.position.y)
+        //{
+        //    transform.position = new Vector3(transform.position.x,
+        //    terrainHeightWhereWeAre,
+        //    transform.position.z);
+        //}
     }
 }
